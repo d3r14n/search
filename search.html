@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Derian Search</title>
+</head>
+<body>
+	<div id="letras">
+		<div class="letra azul">W</div>
+		<div class="letra roja">h</div>
+		<div class="letra amarilla">a</div>
+		<div class="letra azul">t</div>
+		<div class="letra verde">'</div>
+		<div class="letra roja">r</div>
+		<div class="letra azul espacio">e</div>
+		<div class="letra roja espacio">U</div>
+		<div class="letra amarilla">s</div>
+		<div class="letra azul">e</div>
+		<div class="letra verde">a</div>
+		<div class="letra roja">r</div>
+		<div class="letra azul">c</div>
+		<div class="letra roja">h</div>
+		<div class="letra amarilla">i</div>
+		<div class="letra azul">n</div>
+		<div class="letra verde">g</div>
+		<div class="letra roja">?</div>
+	</div>
+	<div id="search">
+		<input type="search" id="searchbar">
+		<button id="searchBtn" onclick="search()">Search!</button>
+	</div>
+</body>
+<style type="text/css">
+	*
+	{
+		padding: 0;
+		margin: 0;
+		overflow-x: hidden;
+	}
+
+	body
+	{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background: #F4F4F4;
+	}
+
+	.azul{color: #4486F4; text-shadow: 1.5px 1px #0A42A0;}
+	.roja{color: #EA4436; text-shadow: 1.5px 1px #9A1B10;}
+	.amarilla{color: #FBBC05; text-shadow: 1.5px 1px #A77E03;}
+	.verde{color: #34A853; text-shadow: 1.5px 1px #288241;}
+
+	.letra
+	{
+		position: relative;
+		width: 3%;
+		float: left;
+		font-size: 2.5em;
+		font-weight: bolder;
+		text-align: right;
+	}
+
+	.espacio
+	{
+		width: 4%;
+    	text-align: left;
+    	padding-left: 2%;
+	}
+
+	#letras
+	{
+		position: relative;
+		left: 20%;
+		top: 30%;
+	}
+
+	#searchbar
+	{
+		position: relative;
+		height: 30px;
+		width: 60%;
+	}
+
+	#searchBtn
+	{
+		position: relative;
+		margin-left: 0;
+		height: 40px;
+		width: 60px;
+	}
+
+	#search
+	{
+		position: relative;
+		left: 18%;
+		top: 33%;
+	}
+</style>
+<script type="text/javascript">
+	function search()
+	{
+		searching = encodeURI(document.getElementById('searchbar').value);
+		if(searching.split("", 1) == "_")
+		{
+			window.open("http://google.com/search?q="+searching.slice(1), "_self");
+		}
+		else
+		{
+			window.open("http://lmgtfy.com/?q="+searching, "_self");
+		}
+	}
+</script>
+</html>
